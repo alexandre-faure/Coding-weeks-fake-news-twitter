@@ -1,0 +1,355 @@
+:root {
+    --col-background: #1C5588;
+    --col-background-tabs-target: #0070d1;
+    --col-background-tabs-border: #004b8d;
+    --col-background-tabs-not-target: #2197ff;
+    --col-font: #FBCE9E;
+    --col-background-readme: #1a1a1a;
+}
+
+body {
+    background-color: var(--col-background);
+    color: var(--col-font);
+    font-family: sans-serif;
+    padding: .5em;
+}
+
+
+h1:first-of-type {
+    text-align: center;
+}
+
+h1:first-of-type+p {
+    text-align: center;
+}
+
+.tabs {
+    position: relative;
+    height: 75vh;
+    line-height: 1;
+}
+
+.tabs>div {
+    display: inline;
+    line-height: 1;
+}
+
+.tabs>div>div {
+    background-color: var(--col-background-tabs-target);
+    position: absolute;
+    overflow: auto;
+    padding: .5em 1em;
+    bottom: 0;
+    top: calc(1.5em);
+    right: 0;
+    left: 0;
+    border-radius: 0 0 .3em .3em;
+    border: 2px solid var(--col-background-tabs-border);
+    line-height: 1;
+}
+
+.tabs>div:not(:target)>div {
+    z-index: 1;
+}
+
+.tabs>div:target>div {
+    z-index: 2;
+}
+
+.tabs>div>a {
+    padding: .6em .8em .2em .8em;
+    background-color: var(--col-background-tabs-not-target);
+    margin-right: .3em;
+    transition: .2s;
+    border-style: solid;
+    border-color: var(--col-background-tabs-border);
+    border-width: 2px 2px 0 2px;
+    border-radius: .5em .5em 0 0;
+    z-index: 3;
+    position: relative;
+    text-decoration: none;
+    color: var(--col-font);
+    line-height: 1;
+    font-size: 1.2em;
+}
+
+.tabs>div:target>a {
+    background-color: var(--col-background-tabs-target);
+}
+
+.tabs>div:not(:target)>a {
+    border-bottom-width: 2px;
+    top: -1px;
+}
+
+.tabs>div>a:hover {
+    background-color: var(--col-background-tabs-target);
+}
+
+#tabAPropos {
+    float: right;
+}
+
+#tabAPropos>a {
+    margin-right: 0;
+}
+
+#divReadme {
+    background-color: var(--col-background-readme);
+    color: rgb(200, 200, 200);
+    padding: 2em 5em;
+    border-radius: .7em;
+}
+
+pre code.hljs {
+    background-color: rgb(15, 15, 15);
+    color: white;
+    border-radius: .3em;
+    border: 2px solid rgb(50, 50, 50);
+}
+
+.flexContainerCol {
+    flex-direction: column;
+}
+
+.flexContainer {
+    display: flex;
+}
+
+.flexElement {
+    padding: .5em 1em;
+    flex: 1;
+}
+
+.flexLeft {
+    flex: 3;
+}
+
+.flexRight {
+    flex: 2;
+    border-left: 2px solid var(--col-background-tabs-border);
+}
+
+.flexTop {
+    flex: 1;
+}
+
+.flexBottom {
+    flex: 3;
+}
+
+.apercuTweet {
+    border: 1px solid rgb(200, 200, 200);
+    background-color: rgb(240, 240, 240);
+    color: rgb(50, 50, 50);
+    padding: 1em;
+    border-radius: .3em;
+    margin: .5em 2em;
+}
+
+.apercuTweetDate {
+    font-style: italic;
+    color: rgb(100, 100, 100);
+}
+
+.apercuTweetDate::before {
+    content: "• ";
+}
+
+.apercuTweetUsername {
+    font-weight: bold;
+    color: black;
+}
+
+.apercuTweetContent {
+    margin-bottom: 0;
+    margin-top: .8em;
+}
+
+.apercuTweetUsername,
+.apercuTweetUserAt,
+.apercuTweetDate {
+    display: inline;
+    padding: 1em .2em;
+}
+
+.TweetUsername {
+    color: var(--col-font);
+}
+
+input {
+    width: calc(95% - 1em);
+    padding: .4em .5em;
+}
+
+button {
+    position: absolute;
+    width: auto;
+    padding: .2em .5em;
+    margin-top: .2em;
+    transform: translateX(calc(-100% - .2em))
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.infoText {
+    font-weight: bold;
+    width: fit-content;
+    padding: .5em 1em;
+    border-radius: .5em;
+    margin: 1em auto;
+}
+
+.errorText {
+    color: red;
+    background-color: rgb(255, 200, 200);
+}
+
+.adviceText {
+    color: blue;
+    background-color: rgb(200, 200, 255);
+}
+
+.infoText::before {
+    margin-right: .5em;
+}
+
+.errorText::before {
+    content: "⚠️";
+}
+
+.adviceText::before {
+    content: "ℹ️";
+}
+
+.apercuTweetUsername::before {
+    content: ".";
+    display: inline-block;
+    color: rgba(0, 0, 0, 0);
+    width: 1em;
+    height: 1em;
+    background-image: url("images/twitter-logo.png");
+    background-size: contain;
+    margin-right: .2em;
+}
+
+
+.apercuProfil {
+    border: 1px solid rgb(24, 24, 24);
+    background-color: rgb(22, 22, 77);
+    color: rgb(189, 189, 189);
+    padding: 1em;
+    border-radius: .3em;
+    margin: .5em 2em;
+}
+
+.apercuKeyword {
+    border: 1px solid rgb(200, 200, 200);
+    background-color: rgb(240, 240, 240);
+    color: rgb(50, 50, 50);
+    padding: 1em;
+    border-radius: .3em;
+    margin: .5em 2em;
+}
+
+#username_user {
+    width: fit-content;
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+    margin: 0 .5em 0 0;
+    font-size: 1.5em;
+}
+
+#username_at_user {
+    margin: 0;
+    width: fit-content;
+    display: inline-block;
+    font-size: 1.2em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 2px solid rgba(70, 70, 70);
+}
+
+th,
+td {
+    padding: .8em .5em;
+}
+
+code {
+    background-color: rgb(15, 15, 15);
+    color: rgb(220, 220, 220);
+    padding: .2em .4em;
+}
+
+.spanReliable {
+    border-radius: .4em 0 0 .4em;
+    border-right: .1em solid rgb(30, 30, 30);
+}
+
+.spanReliable::before {
+    content: "▼";
+    width: 1em;
+    height: 1em;
+    transform: translateX(calc(50% + .1em)) translateY(-105%);
+    float: right;
+    text-align: center;
+    line-height: 1;
+}
+
+.spanFake {
+    border-radius: 0 .4em .4em 0;
+    border-left: .1em solid rgb(30, 30, 30);
+}
+
+.barReliability>span {
+    display: inline;
+    color: rgba(30, 30, 30);
+    transition: .2s;
+}
+
+.spanFake:hover {
+    box-shadow: 2px 0 3px white;
+}
+
+.spanReliable:hover {
+    box-shadow: -2px 0 3px white;
+}
+
+.barReliability {
+    display: flex;
+    border-radius: .4em;
+    background: linear-gradient(to left, green 25%, lime 38%, yellow 45%, orange 60%, red 75%);
+    box-shadow: 0 0 2px white;
+    margin: 2em 20% 1em 20%;
+}
+
+.barReliability:hover {
+    cursor: pointer;
+}
+
+#containerReadme {
+    padding: 2em 10%;
+}
+
+a {
+    color: rgb(50, 120, 255);
+}
+
+.sentence_result {
+    font-weight: bold;
+    text-align: center;
+}
+
+#divTitle {
+    margin-bottom: 2em;
+}
